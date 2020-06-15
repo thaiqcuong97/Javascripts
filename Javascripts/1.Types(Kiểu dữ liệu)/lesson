@@ -1,4 +1,109 @@
 - Có tất cả 7 types trong Javascript
   1.Null
-    -Không tồn tại, không có gì cả. Trong Javascript data type "null" trả về  "Object".
-    
+    - Không tồn tại, không có gì cả. Trong Javascript data type "null" trả về  "Object".
+    - Ex: 
+        typeof null === "object"; // true
+    - Null mang giá trị falsy (aka luôn sai) nhưng đồng thời nó lại trả về "object" 
+    khi chúng ta kiểm tra với typeof.
+
+  2.Undefined
+    - Những biến mà không có giá trị.
+
+  3.Boolean
+    - Chỉ có 2 giá trị: true & false.
+    - Mọi thứ có giá trị đều trả về  "true" (aka truthy). 
+      Ex:
+        Boolean(100); //true
+        Boolean("hello"); //true
+    - Có 1 số trường hợp đặc biệt có giá trị nhưng sẽ trả về kết quả là false(aka falsy).
+      Ex:
+        Boolean(0); //false
+        Boolean(""); //false
+        Boolean(null); //false
+        Boolean(undefined); //false
+        Boolean(false); //false 
+        Boolean(NaN); //false
+  4.Number
+    - Javascript sử dụng 64 bit để biểu diễn number theo cuẩn IEEE 754.
+    - Có 3 số đặc biệt trong Javascript:
+      + Infinity, -Infinity, NaN.
+        * Infinity & -Infinity: Tương ứng với số dương vô cùng và số âm vô cùng.
+        * NaN( Not a Number): Là một giá trị đặc biệt khi một phép tính không thực hiện được.
+          Ex: 0/0 => NaN
+              2 * 'ba' => NaN
+    - Methods(phương thức) đối với numbers.
+      + toString(): trả về một số biểu diễn dạng string.
+      + toExponential([number]): trả về string biểu diễn số dạng số mũ (exponential), 
+      với số lượng chữ số thập phân là number.
+      + toFixed(number): trả về string biểu diễn số với số lượng của chữ số thập phân là number.
+        Ex:
+          const z = 96.69;
+          console.log(z.toFixed(0));       // => 97 : làm tròn
+          console.log(z.toFixed(1));       // => 96.7 : làm tròn
+          console.log(z.toFixed(6));       // => 96.690000 : mở rộng đuôi 0
+    - Một số phương thức toàn cục (Global Methods).
+      + Number(): chuyển đổi một biến trong JavaScript thành numbers
+      + parseInt(): chuyển đầu vào là string thành một số. 
+      + parseFloat(): cũng tương tự như parseInt() nhưng kết quả trả về sẽ là số thực.
+        Ex:
+          var x = true;
+          var y = false;
+          var z = new Date();
+          var t = '69';
+          var u = '100.01 34';
+          console.log(Number(x));     // => 1
+          console.log(Number(y));     // => 0
+          console.log(Number(z));     // => 1493393286011
+          console.log(Number(t));     // => 69
+          console.log(Number(u));     // => NaN
+
+          console.log(parseInt(t));   // => 69
+          console.log(parseInt(u));   // => 100 => lấy phần nguyên
+
+          console.log(parseFloat(t)); // => 69
+          console.log(parseFloat(u)); // => 101.01
+  5. String
+    - Strings là giá trị dùng để biểu diễn text (văn bản, đoạn văn bản).
+    - Để hiển thị dấu " "  và các kí tự đặc biệt trong string, có 2 cách:
+      + Sử dụng dấu backslash ()
+        * Chèn một số kí tự đặc biệt sử dụng backslash ()
+          \' => '
+          \" => "
+          \\ => \
+          \b => backspace
+          \t => dấu tab theo chiều ngang
+          \n => xuống dòng mới
+      + Sử dụng kết hợp dấu ngoặc kép và dấu ngoặc đơn.
+        var x = "It's six o'clock now."; => It's six o'clock now.
+        var y = 'Call me "JavaScripter"'; => Call me "JavaScript".
+    - Nối string: Ghép nối string dùng toán tử +:
+      Ex: 
+        var y = 'Thai' +
+                'Cuong';
+                => Thai Cuong
+    - Phương thức(methods) của strings.
+      + trim(): trả về một string mới với tất cả dấu cách ở đầu và cuối bị bỏ đi.
+      + str.concat(str2 [, ...strN]): dùng để nối hai (hoặc nhiều) chuỗi lại với nhau thành một chuỗi mới.
+        Ex: 
+          const Str1 = 'Tôi học'
+          const Str2 = 'JavaScript'
+          console.log(Str1.concat(' ',Str2));
+      + indexOf(str, [start]): trả về vị trí của str xuất hiện đầu tiên trong string ban đầu, bắt đầu từ vị trí start. 
+      Nếu không tìm thấy thì trả về -1.
+      + lastIndexOf(str, [end]): trả về vị trí của str xuất hiện cuối cùng trong string ban đầu, kết thúc tại vị trí end. 
+      Nếu không tìm thấy thì trả về -1.
+      + search(): tương tự như indexOf() (tuy nhiên search() mạnh mẽ hơn vì nó hỗ trợ Regular Expression).
+      + slice(start, [end]): trả về string mới là một phần của string ban đầu tính từ vị trí start đến end.
+      + substring(start, [end]): tương tự như slice(), nhưng các hệ số không thể là số nguyên âm.
+      + substr(start, [length]): tương tự như slice(), tuy nhiên tham số length sẽ là độ dài của string mới.
+      + replace(oldString, newString): tạo ra string mới bằng cách lấy string ban đầu và thay thế oldString bằng newString. Mặc định, phương thức này sẽ chỉ thay thế một string đầu tiên. Để thay thế tất cả các string trùng khớp, bạn phải sử dụng Regular Expression (mình sẽ nói ở các phần sau).
+      + charAt(index): trả về kí tự tại vị trí index
+      + charCodeAt(index): trả về mã Unicode của kí tự tại vị trí index.
+
+  6.Object
+    - Tập hợp các thuộc tính trong cặp dấu {}, mỗi thuộc tính được lưu dưới dạng cặp key/value.
+    Các thuộc tính này có thể ở bất cứ dạng data types nào.
+
+  7.Symbol
+    - Là một kiểu dữ liệu tạo ra giá trị duy nhất, mỗi một symbol được tạo ra sẽ có một giá rị khác nhau và
+    giá trị đó là duy nhất.
