@@ -1,0 +1,26 @@
+1.Variables 
+  - Trong Javascript biến như là một cái hộp có tên dùng để lưu trử giá trị.
+
+2.Variables được lưu trử ở đâu.
+  - Được lưu trữ ở bộ nhớ browser process(tiến trình trình duyệt).
+  Hiểu nôm na là được lưu trong Ram mà trình duyệt đang sử dụng.
+
+3.Khai báo Variables.
+ - Để khai báo biến ta sử dụng từ khóa: var, const, let.
+  + var: Biến toàn cục, truy cập ở phạm vi hàm số hoặc bên ngoài hàm số.
+  + const: Sử dụng để khai báo một hằng số, giá trị của nó không thay đổi trong
+  suốt quá trình chạy.
+  + let: Chỉ sử dụng được trong block bao quanh nó được xác định bằng cặp {}.
+
+4.Kiểu dữ liệu của Variables
+  - Sử dụng 7 kiểu dữ liệu: null, undefined, boolean, string, number, object, symbol.
+
+5. Phạm vi của Variables
+  - Có 2 loại phạm vi: 
+    + Biến cục bộ(local scope): 
+      - Được khai báo bên trong một hàm.
+      - Chỉ được truy cập bên trong hàm. 
+    + Biến toàn cục(global scope): 
+      - Được khai báo bên ngoài hàm.
+      - Truy cập được bên ngoài và bên trong hàm.
+      
