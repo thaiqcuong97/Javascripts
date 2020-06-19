@@ -1,0 +1,38 @@
+1.Định nghĩa.
+  - Là tập hợp gồm nhiều câu lệnh đượcc sắp xếp theo một thứ ự xác định để xây dựng thành một chức năng, 
+  giúp chung ta dùng lại nhiều lần, khi nào cần thì chúng ta gọi lại và dùng.
+  - Được gọi từ bên ngoài hoặc bên trong chính nó.
+  - Một hàm có thể được gọi nhiều lần (hay nói cách khác là không giới hạn số lần gọi hàm).
+
+2.Hàm không return
+  - Là hàm làm công việc nào đó mà không cần trả về  và bên ngoài không cần dùng kết quả của nó cho code khác.
+    Ex: 
+      function sum(a,b){
+        const sum = a+b;
+        console.log(sum)
+      }
+      sum(2,3);
+3.Hàm có return
+  - Là hàm trả về kết quả giá trị nào đó.
+    Ex: 
+      function sum(a,b){
+        return a+b;
+      }
+      sum(2,3);
+
+4.Arrow function
+  - Giống với Function nhưng được viết rút gọn lại.
+  - Cú pháp của ES6.
+  4.1.Cách sử dụng.
+    4.1.1.Với nhiều tham số
+      - Ex:
+        const Sum = (a,b) => a*b;
+        Sum(2,3);
+    4.1.2.Với mọt tham số
+      - Ex:
+        const phraseSplitter = phrase => phrase.split(' ');
+        phraseSplitter('Arrow function');
+    4.1.3.Không có tham số
+      - Ex:
+        const sayName = () => {console.log('Thai Quoc Cuong');};
+        sayName();
