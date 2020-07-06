@@ -1,5 +1,5 @@
 1.Định nghĩa.
-  - Là tập hợp gồm nhiều câu lệnh đượcc sắp xếp theo một thứ ự xác định để xây dựng thành một chức năng, 
+  - Là tập hợp gồm nhiều câu lệnh đượcc sắp xếp theo một thứ tự xác định để xây dựng thành một chức năng, 
   giúp chung ta dùng lại nhiều lần, khi nào cần thì chúng ta gọi lại và dùng.
   - Được gọi từ bên ngoài hoặc bên trong chính nó.
   - Một hàm có thể được gọi nhiều lần (hay nói cách khác là không giới hạn số lần gọi hàm).
