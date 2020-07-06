@@ -7,5 +7,11 @@
 
     => undefined
 
-    -> Khi chạy nó sẽ tạo một vùng bộ nhớ var a; chuyển lên đầu  và console.log(a) sẽ lấy vùng bộ nhớ đó. Nên kq là undefined
+    - Giải thích
+      Trình biên dịch của Javascript sẽ phân tách phần var a = 'Hello Hoisting' thành 2 phần là khai báo và gán giá trị
 
+      Khai báo: var a
+      Gán giá trị a = 'Hello Hoisting'
+      Theo Hoisting, Javascipt sẽ chuyển phần khai báo lên trên top. 
+      Vì vậy, sẽ chỉ có phần khai báo được chuyển lên trên top, 
+      còn phần gán giá trị vẫn giữ nguyên thứ tự nên vẫn ở dưới Vậy nên Output sẽ là undefined
