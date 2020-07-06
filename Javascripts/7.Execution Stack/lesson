@@ -1,0 +1,27 @@
+Ex:
+  function b(){
+    var myVar;
+  }
+  function a(){
+    b(); //invoke hàm
+    var myVar = 69;
+  }
+  var myVar = 0;
+  a();  //invoke hàm
+
+-> Hiểu như là 1 ngăn xếp 
+
+
+|                                       |
+|   b()     myVar = undefined           |      
+|                                       |Execution
+|   a()     myVar = 69                  |      
+|                                       |--> Stack
+|   Global Execution Context  myVar = 0 |   
+|_______________________________________|
+
+lấy từ trên xuống : b -> a và giữ lại Global
+
+1.ĐN
+  - Có các Execution xếp lên nhau và thoát từ cái trên cùng xuống lần.
+
