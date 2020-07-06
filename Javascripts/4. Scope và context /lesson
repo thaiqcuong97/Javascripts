@@ -1,0 +1,3 @@
+scope là dựa trên function, còn context dựa trên object. 
+Nói cách khác, scope liên quan đến việc function truy xuất biến khi nó được gọi. 
+Còn context luôn chỉ đến giá trị của từ khóa this tham chiếu đến object sở hữu đoạn code đang được thực thi.

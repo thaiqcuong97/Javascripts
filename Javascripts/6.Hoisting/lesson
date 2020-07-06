@@ -1,0 +1,11 @@
+1.ĐN 
+  -Hoisting là hành động mặc định của Javascript, nó sẽ chuyển phần khai báo lên phía trên top Trong Javascript, 
+  một biến (variable) có thể được khai báo sau khi được sử dụng.
+  -Ex
+    console.log(a);
+    var a = 'Hello Hoisting'
+
+    => undefined
+
+    -> Khi chạy nó sẽ tạo một vùng bộ nhớ var a; chuyển lên đầu  và console.log(a) sẽ lấy vùng bộ nhớ đó. Nên kq là undefined
+

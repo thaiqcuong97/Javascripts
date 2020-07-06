@@ -36,3 +36,22 @@
       - Ex:
         const sayName = () => {console.log('Thai Quoc Cuong');};
         sayName();
+  4.2. Lưu ý khi dùng arrow function.
+    - Arrow function không bị ràng buộc bởi this.
+    Ex:
+      var x = 0;
+      function DelayPrint(x, timeout) {
+        this.x = x;
+      setTimeout(function print(x, timeout) {
+        console.log(`The value is ${this.x}.`);
+        }, timeout);
+      }
+    DelayPrint(1, 1000);
+    -Arrow function sử dụng khá ok trong các TH dùng: map, filter, reducer,...
+    -Arrow function không có bind.
+    -Arrow function không phù hợp là method của object.  
+5. Anonymous Function
+  - Anonymous functions hay còn gọi là hàm ẩn danh, 
+  là một hàm được sinh ra đúng vào thời điểm chạy của chương trình.
+  - Anonymous functions được khai báo bằng cách sử dụng toán tử 
+  thay vì sử dụng cú pháp định nghĩa hàm thông thường.

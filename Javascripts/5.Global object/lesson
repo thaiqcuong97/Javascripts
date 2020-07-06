@@ -1,0 +1,39 @@
+    1.Execution context.
+      - Ngữ cảnh thực thi (Execution Context): Khi trang web ta chạy lên, nó sẽ mặc định tạo ra một Global Context là Window. 
+      Sau đó, nếu ta tạo một function thì mỗi function sẽ có một Execution Context nữa.
+      - Phạm vi(scope, scope chain, lexical scope): Là một phạm vi hay nơi mà biến tồn tại và truy xuất được. 
+      Ra khỏi scope thì biến không còn nữa.
+        Ex:
+          function b() {
+              var myVar = 3;
+              console.log(myVar);// 3
+          }
+          function a() {
+              var myVar = 2;
+              b();
+              console.log(myVar);// 2
+          }
+
+          var myVar = 1;
+          console.log(myVar);//1
+          a();
+          console.log(myVar);//1
+          => 1-3-2-1
+      -Khi thực thi đoạn code trên, javascript sẽ tạo thành một Execution Stack như sau:
+        Global Context => function a Context => function b Context.
+
+        Ex: 
+          function a() {
+            function b() {
+              console.log(myVar);//2  vì outer environment của nó là function a.
+            }
+            var myVar = 2;
+            b();
+            console.log(myVar);// 2 
+          }
+
+          var myVar = 1;
+          console.log(myVar);//1
+          a();
+
+        
