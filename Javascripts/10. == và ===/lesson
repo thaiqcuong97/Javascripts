@@ -1,0 +1,8 @@
+1. Khác nhau giữa == và ===
+
+  == cho phép coercion (đổi kiểu dữ liệu).
+  === không cho phép coercion (đổi kiểu dữ liệu).
+
+2. Quy tắc dùng ==.
+    - Dùng == khi bạn đã biết rõ kiểu dữ liệu trong phép so sánh.
+    - Các trường hợp còn lại dùng ===

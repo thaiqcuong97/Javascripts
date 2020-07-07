@@ -1,0 +1,28 @@
+1.Coercion là gì?
+  - Coercion dịch từ anh ra việt nghĩa là sự ép buộc, bắt buộc làm gì đó.
+
+2.ĐN
+  - Trong JavaScript, coercion (hay còn gọi là type conversion) được hiểu là việc biến đổi (convert) 
+từ kiểu dữ liệu này sang kiểu dữ liệu khác trong quá trình thực hiện chương trình.
+
+Ex: 
+  var codersX1 = 10;
+  var codersX2 = [10];
+
+  if (codersX1 == codersX2) {
+    // true ???
+    // do something ...
+  }
+
+  /**
+  * if (codersX1 == codersX2)
+
+  * if (10 == [10]) => thực hiện ToPrimitive([10]), biến [10] thành "10"
+
+  * if (10 == "10") => Vế trái có type là Number, nên vế phải sẽ được ưu tiên đổi sang Number, 
+  * "10" biến thành 10
+
+  * if (10 === 10) => Aha, giờ 2 vế có cùng type rồi, mình chuyển qua so sánh `===`
+
+  * if (true) => giá trị bằng nhau nên trả về true
+  */
