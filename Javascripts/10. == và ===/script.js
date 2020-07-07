@@ -42,17 +42,7 @@ function isValidName(name){
   }
   
   // tests:
-  console.log(hoursAttended("foo", 6) === false);
-  console.log(hoursAttended(6, "foo") === false);
-  console.log(hoursAttended("foo", "bar") === false);
-  console.log(hoursAttended(null, null) === false);
-  console.log(hoursAttended(null, undefined) === false);
-  console.log(hoursAttended(undefined, null) === false);
-  console.log(hoursAttended(6, 10) === true);
-  console.log(hoursAttended(6, "10") === true);
-  console.log(hoursAttended("6", 10) === true);
-  console.log(hoursAttended("6", "10") === true);
-  
+
   console.log(isValidName(false) === false);
   console.log(isValidName(null) === false);
   console.log(isValidName(undefined) === false);
