@@ -1,3 +1,5 @@
+parameters: Là tham số truyền vào trong function : fuonction(pram1, pram2,...);
+
 1.Định nghĩa.
   - Là tập hợp gồm nhiều câu lệnh đượcc sắp xếp theo một thứ tự xác định để xây dựng thành một chức năng, 
   giúp chung ta dùng lại nhiều lần, khi nào cần thì chúng ta gọi lại và dùng.
@@ -55,3 +57,45 @@
   là một hàm được sinh ra đúng vào thời điểm chạy của chương trình.
   - Anonymous functions được khai báo bằng cách sử dụng toán tử 
   thay vì sử dụng cú pháp định nghĩa hàm thông thường.
+
+6.Arguments function 
+  - Là object giống Array khả truy cập bên trong hàm, 
+    chứa các giá trị của đối số truyền vào trong hàm đó.
+    Ex: 
+      function func1(a, b, c) {
+        console.log(arguments[0]);
+        // expected output: 1
+      }
+      func1(1,2,3);
+  - “Giống Array” tức là arguments có thuộc tính length và đánh chỉ mục từ không (0), 
+    nhưng nó không có phương thức dựng sẵn của Array như forEach() và map().
+
+7.Function overloading.
+  function sayHi(firt,last,middle){
+    console.log('Hi' + ' ' +firt + ' ' + last + ' ' + middle);
+    console.log(1)
+  }
+
+  function sayHi(firt,last){
+    console.log('Hi' + ' ' +firt + ' ' + last);
+    console.log(2);
+  }
+
+  sayHi('Thai', Quoc);
+  sayHi('Thai','Quoc','Cuong')
+
+  => Hi Thai Quoc 2 ; Hi Thai Quoc 2
+  
+  --> Trong hoisting mới vô nó sẽ chạy file --> Tạo ra 1 vùng bộ nhớ cho hàm ở trước (sayHi(1)) -->
+      Nếu ở dưới có thêm 1 hàm giống (SayHi()) thì nó sẽ bỏ hàm trên và lưu hàm dưới(sayHi(2)ghi đè lên sayHi(1))
+      --> nên sẽ ra kết quả 2.
+
+Ta không nên viết 2 hàm, để khắc phục tham số không biết trước ta dùng function arguments.
+
+  function sayHi(firt,last){
+    let middle = arguments[2] || '';
+    console.log('Hi' + ' ' +firt + ' ' + last);
+    console.log(2);
+    }
+  
+  sayHi('Thai','Quoc','Cuong');  // Hi Thai Quoc Cuong 
