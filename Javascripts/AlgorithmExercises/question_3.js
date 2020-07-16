@@ -1,3 +1,5 @@
+// sắp xếp mảng
+
 function secondLargestNumber(array) {
   // C1: giảm dần  (Bubble Sort) 
   //   let result = 0;

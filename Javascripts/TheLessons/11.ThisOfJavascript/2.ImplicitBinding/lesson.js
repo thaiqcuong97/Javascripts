@@ -1,6 +1,7 @@
-// ImplicitBinding : thằng nào đnag gọi thằng đó
+// ImplicitBinding : thằng nào đangg gọi thằng đó
 
 // áp dụng với this đó là khi call-site có context là object. 
+//  this tham chiếu tới object ngữ cảnh.
 
 function foo() {
     var a = 10;
