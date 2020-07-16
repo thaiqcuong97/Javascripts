@@ -67,3 +67,19 @@ foo.call( obj ); // 2
 
 // Gọi hàm foo với binding tường minh sử dụng foo.call ép buộc this trỏ tới obj. 
 // Nếu tham số là kiểu nguyên thủy thì các giá trị này sẽ được chuyển về dạng object tương ứng.
+
+// 4. Binding sử dụng new
+
+// Khi gọi hàm với new:
+
+// Một đối tượng mới được khởi tạo
+// Đối tượng này được liên kết với [[Prototype]]
+// Đối tượng này được binding tới this
+// Nếu hàm được gọi không trả về một đối tượng nào, từ khóa new sẽ khởi tạo một đối tượng mới
+
+function foo(a) {
+	this.a = a;
+}
+
+var bar = new foo( 2 );
+console.log( bar.a ); // 2
