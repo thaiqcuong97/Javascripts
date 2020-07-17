@@ -99,3 +99,33 @@ Ta không nên viết 2 hàm, để khắc phục tham số không biết trư�
     }
   
   sayHi('Thai','Quoc','Cuong');  // Hi Thai Quoc Cuong 
+
+8.ES6 default arguments.
+
+ function sayHi(number1,number2 = 0; number3 =0){
+  // let middle = arguments[2] || '';
+    return number1 + number2 + number3;
+    }
+  
+  sayHi('100');
+
+- default arguments là parameters truyền vào trog function được gán giá trị trực tiếp.
+
+9.Immediately invoked function expression 
+- IIFE là một dạng function expression định nghĩa một anonymous function được thực thi ngay sau khi nó được tạo ra.
+  function sayHi(name) {
+      console.log(`Hello ${name}`)
+  }('Cường') 
+  // Hello Cường
+
+- Cách khai báo này sẽ chứa hai phần chính: 
+  + Phần thứ nhất là function sayHi(name){} , bạn sẽ khai báo function trong đây.
+  + Phần thứ hai là () , có nhiệm vụ thực thi function ngay sau khi nó được khai báo.
+
+-Dùng IIFE trong trường hợp nào.
+  + Bạn có thể dùng cách khai báo này trong trường hợp viết thư viện và cần nó thực thi một cách tự động.
+  + Ngoài ra để giảm thiểu memory leak do global variables( rò rỉ bộ nhớ) gây ra, bạn cũng nên dùng cách khai báo này. 
+  Bởi vì những biến được khai báo trong IIFE sẽ không thể sử dụng bên ngoài scope của nó.
+
+-Chú ý: 
+- KHi có 1 hàm để trước hàm tự động chạy nó sẽ sinh ra bug.
